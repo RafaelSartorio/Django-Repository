@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda de afazeres</title>
+</head>
+<body>
+    <form action="subimit" method="post"> {%csrf_token%}
+        <div align="center">
+            <h2>Adicione aqui o evento que vc deseja</h2>
+            <label>Titulo do evento</label>
+            <br>
+            <input type="text" name="titulo" size="23">
+            <br>
+            <label>Data do evento</label>
+            <br>
+            <input type="datetime-local" name="data_evento" size="23">
+            <br>
+            <label >Descrição</label>
+            <br>
+            <textarea name="Descricao" rows="5" cols="23"></textarea>
+            <br> <br>
+            <button type="submit" >Salvar</button>
+            <a href="/">
+                <button type="button">Cancelar</button>
+            </a>
+        </div>
+    </form>
+</body>
+</html>

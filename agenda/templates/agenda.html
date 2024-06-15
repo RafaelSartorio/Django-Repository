@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+</head>
+<body>
+    <div>
+        <a href="\logout">
+            <button type="button" align="Right">Encerrar sessão</button> {% csrf_token %}
+        </a>
+    </div>
+    <h1>Agenda de afazeres</h1>
+    <h2>Agenda</h2>
+
+    <ul>
+    {% for evento in eventos %}
+    <li>
+        {{evento.Titulo}} -- {{evento.data_evento_criacao}} -- {{evento.descricao}}
+        (
+            <a href="#">Editar</a> / 
+            <a href="evento/delete/{{evento.id}}">Excluir</a> 
+        )
+
+    </li>
+    {%endfor%}
+    </ul>
+    <div>
+        <a href="/agenda/evento">
+            <button type="button" align="Right">Novo evento</button> {% csrf_token %}
+        </a>
+    </div>    
+    <p>Os direitos são reservados a mim </p>
+</body>
+</html>
